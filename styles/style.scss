@@ -8,6 +8,10 @@ body {
 
   &__title {
     font-size: 2rem;
+    
+    &--clicked {
+      color: red;
+    }
   }
 }
 
@@ -21,7 +25,15 @@ body {
     padding: 0.5rem;
     &::marker {
       margin-right: 0.5rem;
-      content: "🔲"
+      content: "🔲";
+    }
+
+    &--completed {
+      text-decoration: line-through;
+
+      &::marker {
+        content: "☑️";
+      }
     }
   }
 }
