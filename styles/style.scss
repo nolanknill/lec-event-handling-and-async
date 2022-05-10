@@ -34,10 +34,12 @@ body {
  */
 .game-over {
   @include fullscreen-overlay;
-  @include flex-center;
-  
+  z-index: -1;
   opacity: 0;
   background-color: #ccc;
+  
+  @include flex-center;
+  flex-direction: column;
   
   &--show {
     opacity: 1;
@@ -46,7 +48,8 @@ body {
      * of page hide transition 
      */
     transition-delay: $transition-length;
-    transition-duration: $transition-length / 2; 
+    transition-duration: calc($transition-length / 2);
+    transition-property: opacity;
   }
 }
 

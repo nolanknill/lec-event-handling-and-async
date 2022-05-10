@@ -32,11 +32,13 @@ body {
   left: 0;
   height: 100vh;
   width: 100vw;
+  z-index: -1;
+  opacity: 0;
+  background-color: #ccc;
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  background-color: #ccc;
+  flex-direction: column;
 }
 .game-over--show {
   opacity: 1;
@@ -46,6 +48,7 @@ body {
    */
   transition-delay: 2s;
   transition-duration: 1s;
+  transition-property: opacity;
 }
 
 .todos__list {
