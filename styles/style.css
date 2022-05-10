@@ -7,11 +7,45 @@ body {
 .page {
   padding: 1rem;
 }
+.page--red {
+  background-color: red;
+}
 .page__title {
   font-size: 2rem;
 }
 .page__title--clicked {
   color: red;
+}
+.page--hidden {
+  opacity: 0;
+  transition-duration: 2s;
+  transition-property: opacity;
+}
+
+/**
+ * Game over screen has a fullscreen overlay with centered
+ * flex children, includes a transition 
+ */
+.game-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background-color: #ccc;
+}
+.game-over--show {
+  opacity: 1;
+  /**
+   * Duration of game over transition is half 
+   * of page hide transition 
+   */
+  transition-delay: 2s;
+  transition-duration: 1s;
 }
 
 .todos__list {

@@ -1,3 +1,6 @@
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+
 body {
   font-family:Arial, Helvetica, sans-serif;
   margin: 0;
@@ -6,12 +9,44 @@ body {
 .page {
   padding: 1rem;
 
+  &--red {
+    background-color:red; 
+  }
+
   &__title {
     font-size: 2rem;
     
     &--clicked {
       color: red;
     }
+  }
+
+  &--hidden {
+    opacity: 0;
+    transition-duration: $transition-length;
+    transition-property: opacity;
+  }
+}
+
+/**
+ * Game over screen has a fullscreen overlay with centered
+ * flex children, includes a transition 
+ */
+.game-over {
+  @include fullscreen-overlay;
+  @include flex-center;
+  
+  opacity: 0;
+  background-color: #ccc;
+  
+  &--show {
+    opacity: 1;
+    /**
+     * Duration of game over transition is half 
+     * of page hide transition 
+     */
+    transition-delay: $transition-length;
+    transition-duration: $transition-length / 2; 
   }
 }
 
